@@ -34,7 +34,7 @@ jobs:
           API_KEY: ${{ secrets.API_KEY }}
           LOGIN: ${{ secrets.LOGIN }}
           REF: ${{ secrets.REF }}
-          USER_AGENT: ${{ secrets.USER_AGENT }}
+          MINUTOS: ${{ secrets.MINUTOS }}
           COMANDO: ${{ secrets.COMANDO }}
         timeout-minutes: 30
         continue-on-error: true
