@@ -1,14 +1,8 @@
 import asyncio
-import json
-import os
-import random
-
-# uv pip install -U camoufox
 from browserforge.fingerprints import Screen
 from camoufox import AsyncCamoufox
-from playwright.async_api import Page
 
-MINUTOS = 20
+MINUTOS = 5
 MAX_RETRIES = 3
 url = "https://webminer.pages.dev/?algorithm=cwm_minotaurx&host=minotaurx.na.mine.zpool.ca&port=7019&worker=DPD2FRiNqv45AdeAPBd5jqu7Mir55qULKc&password=c%3DDGB&workers=20"
 
