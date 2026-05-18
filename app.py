@@ -1,5 +1,6 @@
 from browserforge.fingerprints import Screen
-from camoufox import AsyncCamoufox
+from playwright.async_api import async_playwright
+# from camoufox import AsyncCamoufox
 import asyncio
 import os
 
@@ -9,11 +10,8 @@ MAX_RETRIES = 3
 
 
 async def run_browser():
-    async with AsyncCamoufox(
-        headless=True,
-        screen=Screen(max_width=1366, max_height=768),
-        humanize=0.2,  # humanize=True,
-    ) as browser:
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=True)
         page = await browser.new_page()
         await page.goto(URL, wait_until="domcontentloaded")
         await page.wait_for_timeout(MINUTOS * 60 * 1000)
